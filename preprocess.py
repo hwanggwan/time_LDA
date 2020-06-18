@@ -109,10 +109,18 @@ def main():
 
     ## dump files
 
+    dump = []
+    for month in range(1, 6):
+        for article in content_per_month_idx[month]:
+            dump.append(np.array(article))
+    
+    dump     = np.array(dump)
+    idx2word = np.array(idx2word)
 
+    np.save('dump.npy', dump)
+    np.save('idx2word.npy', idx2word)
 
-
-
+    print("Fin.")
 
     
         
